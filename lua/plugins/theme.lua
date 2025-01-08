@@ -2,13 +2,13 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "catppuccin-macchiato",
     },
   },
   {
     "catppuccin/nvim",
     opts = {
-      transparent_background = true,
+      transparent_background = false,
       integrations = {
         aerial = true,
         alpha = true,

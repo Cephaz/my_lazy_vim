@@ -15,8 +15,6 @@ local supported = {
   "html",
   "javascript",
   "javascriptreact",
-  "json",
-  "jsonc",
   "less",
   "markdown",
   "markdown.mdx",
