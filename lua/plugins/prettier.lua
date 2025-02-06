@@ -5,7 +5,6 @@ if lazyvim_docs then
   vim.g.lazyvim_prettier_needs_config = false
 end
 
----@alias ConformCtx {buf: number, filename: string, dirname: string}
 local M = {}
 
 local supported = {
@@ -23,6 +22,7 @@ local supported = {
   "typescriptreact",
   "vue",
   "yaml",
+  "mts",
 }
 
 --- Checks if a Prettier config file exists for the given context
