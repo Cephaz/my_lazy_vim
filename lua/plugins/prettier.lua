@@ -22,7 +22,6 @@ local supported = {
   "typescriptreact",
   "vue",
   "yaml",
-  "mts",
 }
 
 --- Checks if a Prettier config file exists for the given context

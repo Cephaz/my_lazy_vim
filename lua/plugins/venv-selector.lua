@@ -31,14 +31,6 @@ return {
         -- Auto reload du venv depuis le cache
         auto_reload = true,
       })
-
-      -- Auto chargement du venv pour les fichiers Python
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = "python",
-        callback = function()
-          require("venv-selector").retrieve_from_cache()
-        end,
-      })
     end,
   },
 }
