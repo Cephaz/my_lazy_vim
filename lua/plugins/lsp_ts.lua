@@ -12,7 +12,14 @@ return {
     capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
     local servers = {
-      volar = { "vue" },
+      volar = {
+        filetypes = { "vue" },
+        init_options = {
+          typescript = {
+            tsdk = vim.fn.stdpath("data") .. "/mason/packages/typescript/lib",
+          },
+        },
+      },
       lua_ls = {
         settings = {
           Lua = {
@@ -25,10 +32,8 @@ return {
     require("mason").setup()
 
     local ensure_installed = vim.tbl_keys(servers)
-    -- vim.list_extend(ensure_installed, { 'stylua' })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
-    -- Setup mason-lspconfig
     require("mason-lspconfig").setup({
       ensure_installed = ensure_installed,
       handlers = {
@@ -40,7 +45,6 @@ return {
       },
     })
 
-    -- Setup LspAttach autocmd for keymaps and additional functionality
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
       callback = function(event)

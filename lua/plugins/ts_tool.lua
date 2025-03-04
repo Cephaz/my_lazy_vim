@@ -9,17 +9,9 @@ return {
         client.server_capabilities.documentFormattingProvider = false
         client.server_capabilities.documentRangeFormattingProvider = false
       end,
-      filetypes = {
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-        "vue",
-      },
+      filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
       settings = {
-        tsserver_plugins = {
-          "@vue/typescript-plugin",
-        },
+        tsserver_plugins = { "@vue/typescript-plugin" },
         jsx_close_tag = {
           enable = true,
           filetypes = { "javascriptreact", "typescriptreact" },
