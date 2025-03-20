@@ -12,11 +12,21 @@ return {
       javascript = { "prettier" },
       typescript = { "prettier" },
       vue = { "prettier" },
-      json = { "prettier" },
+      json = { "jq" }, -- Utiliser `jq` pour JSON au lieu de Prettier
       yaml = { "prettier" },
       html = { "prettier" },
       css = { "prettier" },
-      lua = { "stylua" }, -- Si tu veux garder `stylua` pour Lua, sinon retire cette ligne
+      lua = { "stylua" },
+    },
+
+    -- ✅ Configurer le formateur jq
+    formatters = {
+      jq = {
+        command = "jq",
+        args = function()
+          return { "--indent", vim.bo.shiftwidth } -- Utilise l'indentation actuelle
+        end,
+      },
     },
   },
 }
