@@ -19,3 +19,8 @@ map("n", "<leader>i4", function()
   vim.bo.expandtab = true
   print("Indentation: 4 espaces")
 end, { desc = "Set indentation to 4 spaces" })
+
+-- Raccourci pour create PR
+vim.keymap.set("n", "<leader>gp", function()
+  vim.cmd("!gh pr create --fill --web")
+end, { desc = "GitHub: Create PR", silent = true })
