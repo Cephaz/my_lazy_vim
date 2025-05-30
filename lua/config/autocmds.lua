@@ -10,8 +10,8 @@
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "json",
   callback = function()
-    vim.bo.shiftwidth = 4 -- Indentation de 4 espaces
-    vim.bo.tabstop = 4 -- Largeur des tabulations = 4 espaces
+    vim.bo.shiftwidth = 2 -- Indentation de 2 espaces
+    vim.bo.tabstop = 2 -- Largeur des tabulations = 2 espaces
     vim.bo.expandtab = true -- Utiliser des espaces au lieu des tabulations
   end,
 })
