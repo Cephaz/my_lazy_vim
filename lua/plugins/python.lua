@@ -68,7 +68,7 @@ return {
       },
     },
     keys = {
-      { ",v", "<cmd>VenvSelect<cr>", desc = "Select Python venv" },
+      { "<leader>lv", "<cmd>VenvSelect<cr>", desc = "Select Python venv" },
     },
     opts = {
       notify_user_on_activate = true,
