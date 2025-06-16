@@ -3,12 +3,16 @@ return {
   version = "*",
   config = function()
     require("git-conflict").setup({
-      default_mappings = true, -- active les mappings par défaut
-      disable_diagnostics = true, -- évite les messages d'erreur pendant le conflit
+      default_mappings = false, -- on les définit nous-mêmes
+      disable_diagnostics = true,
       highlights = {
         incoming = "DiffAdd",
         current = "DiffText",
       },
     })
+
+    vim.keymap.set("n", "[x", "<Plug>(git-conflict-ours)", { desc = "Git Conflict - Choose current" })
+    vim.keymap.set("n", "]x", "<Plug>(git-conflict-theirs)", { desc = "Git Conflict - Choose incoming" })
+    vim.keymap.set("n", "cx", "<Plug>(git-conflict-both)", { desc = "Git Conflict - Choose both" })
   end,
 }
